@@ -1,0 +1,3 @@
+codigo: 102;Stock Min: 50;Stock Real: 20
+codigo: 135;Stock Min: 20;Stock Real: 15
+codigo: 140;Stock Min: 10;Stock Real: 8

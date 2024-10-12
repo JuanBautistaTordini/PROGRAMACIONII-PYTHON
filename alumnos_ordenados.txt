@@ -1,0 +1,8 @@
+5161;Fernandez;Carlos
+1234;Gomez;Ana
+3141;Lopez;María
+1121;Martinez;Juan
+9101;Perez;Lucia
+5678;Ramirez;Pedro
+7181;Sanchez;Luis
+9202;Torres;Sofia
