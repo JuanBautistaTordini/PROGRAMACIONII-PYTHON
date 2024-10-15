@@ -63,3 +63,4 @@ if __name__ == "__main__":
     # Crear una instancia de Moto
     moto = Moto("Yamaha", "MT-07", "MOTO123", "Negro", 2021, 8000.0, 5000.0, "Gasolina", 0.8, 689)
     print(moto)
+
