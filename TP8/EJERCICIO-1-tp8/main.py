@@ -1,5 +1,8 @@
 import json
 
+from class.Libro import libro
+
+
 class Tester:
     @staticmethod
     def cargar_libros():
