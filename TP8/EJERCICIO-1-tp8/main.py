@@ -1,11 +1,14 @@
 # main.py
+from Libro import Libro
+
 import json
+
 
 class Tester:
     @staticmethod
     def cargar_libros():
         # Abre el archivo 'data/libros.json' en modo lectura
-        with open('libros.json', 'r', encoding='utf-8') as file:
+        with open('C:/Users/bauti/OneDrive/Escritorio/TUP/Programacion II/tps/TP8/EJERCICIO-1-tp8/libros.json', 'r', encoding='utf-8') as file:
             # Carga los datos del archivo JSON en una lista de diccionarios
             data = json.load(file)
             # Crea una lista de objetos Libro a partir de los diccionarios
@@ -14,9 +17,9 @@ class Tester:
 
     @staticmethod
     def mostrar_libros(libros):
-        # Itera sobre la lista de libros y muestra la información de cada uno
+        # Indentación corregida: Itera sobre la lista de libros y muestra la información de cada uno
         for libro in libros:
-            print(f"Título: {libro.titulo}, Autor: {libro.autor}, Género: {libro.genero}, Año de Publicación: {libro.ano_publicacion}, ISBN: {libro.isbn}")
+            print(f"Título: {libro.get_titulo()}, Autor: {libro.get_autor()}, Género: {libro.get_genero()}, Año de Publicación: {libro.get_ano_publicacion()}, ISBN: {libro.get_isbn()}")
 
     @staticmethod
     def buscar_por_ano(libros, ano):

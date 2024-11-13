@@ -1,16 +1,16 @@
 [
     {
-        "Titulo": "El Quijote",
-        "Autor": "Miguel de Cervantes",
-        "Genero": "Novela",
+        "titulo": "El Quijote",
+        "autor": "Miguel de Cervantes",
+        "genero": "Novela",
         "ano_publicacion": 1605,
-        "ISBN": "978-3-16-148410-0"
+        "isbn": "978-3-16-148410-0"
     },
     {
-        "Titulo": "Cien Años de Soledad",
-        "Autor": "Gabriel García Márquez",
-        "Genero": "Realismo mágico",
+        "titulo": "Cien Años de Soledad",
+        "autor": "Gabriel García Márquez",
+        "genero": "Realismo mágico",
         "ano_publicacion": 1967,
-        "ISBN": "978-0-14-118499-9"
+        "isbn": "978-0-14-118499-9"
     }
 ]
