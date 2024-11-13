@@ -1,6 +1,6 @@
 import json
 
-from class.Libro import libro
+from clases.libro import libro
 
 
 class Tester:
