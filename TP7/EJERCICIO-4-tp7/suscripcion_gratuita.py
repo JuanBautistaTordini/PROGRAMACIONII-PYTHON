@@ -10,7 +10,7 @@ class SuscripcionGratuita(Suscripcion):
         super().__init__(nombre, email, telefono, pais)
         self.__tiempoSinPublicidad = tiempoSinPublicidad
         self.__tiempoReproducido = tiempoReproducido
-
+        
     def get_tiempoSinPublicidad(self):
         return self.__tiempoSinPublicidad
 

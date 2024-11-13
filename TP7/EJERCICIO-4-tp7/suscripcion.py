@@ -3,7 +3,7 @@
 # Clase Suscripción
 
 class Suscripcion:
-    def __init__(self, nombre, email, telefono, pais):
+    def __init__(self, nombre, email, telefono, pais):        
         self.__nombre = nombre
         self.__email = email
         self.__telefono = telefono

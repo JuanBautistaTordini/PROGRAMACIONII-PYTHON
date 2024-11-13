@@ -1,4 +1,5 @@
 # dispositivo.py
+
 class Dispositivo:
     def __init__(self, id, nombre, tipo):
         self.__id = id

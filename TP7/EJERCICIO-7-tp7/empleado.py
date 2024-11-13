@@ -1,7 +1,7 @@
 #  empleado.py
 
 '''
-1. Empleado (Clase Abstracta)
+1. Empleado (Clase Abstracta y padre)
     Atributos:
         __dni: str
         __nombre: str
