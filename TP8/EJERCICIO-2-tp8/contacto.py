@@ -74,6 +74,7 @@ class Contacto:
             "direccion": self.direccion
         }
     
+    @staticmethod()
     def fromDiccionario(self):
         return Contacto(
             nombre = dicc["nombre"],
