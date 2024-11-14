@@ -27,6 +27,17 @@ Diagrama de Clase contacto:
 import json
 
 class Contacto:
+    """
+    Clase que representa un contacto con información personal.
+
+    Atributos:
+    - nombre (str): El nombre del contacto.
+    - apellido (str): El apellido del contacto.
+    - telefono (str): El número de teléfono del contacto.
+    - correo_electronico (str): El correo electrónico del contacto.
+    - direccion (str): La dirección del contacto.
+    """
+
     def __init__(self, nombre: str, apellido: str, telefono: str, correo_electronico: str, direccion: str):
         # validaciones:
         if not isinstance(nombre, str):
@@ -66,6 +77,12 @@ class Contacto:
     # Método serializacion/desealizacion
     
     def toDiccionario(self):
+        """
+        Convierte el objeto Contacto en un diccionario.
+
+        Returns:
+        - dict: Un diccionario con los atributos del contacto.
+        """
         return {
             "nombre": self.nombre,
             "apellido": self.apellido,
@@ -74,8 +91,17 @@ class Contacto:
             "direccion": self.direccion
         }
     
-    @staticmethod()
-    def fromDiccionario(self):
+    @staticmethod
+    def fromDiccionario(dicc):
+        """
+        Crea un objeto Contacto a partir de un diccionario.
+
+        Args:
+        - dicc (dict): Un diccionario con los atributos del contacto.
+
+        Returns:
+        - Contacto: Un objeto Contacto con los atributos del diccionario.
+        """
         return Contacto(
             nombre = dicc["nombre"],
             apellido = dicc["apellido"],
@@ -84,3 +110,5 @@ class Contacto:
             direccion = dicc["direccion"]
         )
     
+    def __str__(self):
+        return (f'{self.nombre} {self.apellido} - Teléfono: {self.telefono} - Correo electrónico: {self.correo_electronico} - Dirección: {self.direccion}')
