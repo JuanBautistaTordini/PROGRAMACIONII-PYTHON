@@ -3,7 +3,6 @@ from Libro import Libro
 
 import json
 
-
 class Tester:
     @staticmethod
     def cargar_libros():
@@ -12,7 +11,7 @@ class Tester:
             # Carga los datos del archivo JSON en una lista de diccionarios
             data = json.load(file)
             # Crea una lista de objetos Libro a partir de los diccionarios
-            libros = [Libro.fromDiccionario(dic) for dic in data]
+            libros = [Libro.fromDiccionario(dicc) for dicc in data]
             return libros
 
     @staticmethod

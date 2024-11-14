@@ -34,6 +34,17 @@ class Libro:
     """
 
     def __init__(self, titulo: str, autor: str, genero: str, ano_publicacion: int, isbn: int):
+        if not isinstance(titulo, str):
+            raise ValueError("El título debe ser una cadena de caracteres.")
+        if not isinstance(autor, str):
+            raise ValueError("El autor debe ser una cadena de caracteres.")
+        if not isinstance(genero, str):
+            raise ValueError("El género debe ser una cadena de caracteres.")
+        if not isinstance(ano_publicacion, int):
+            raise ValueError("El año de publicación debe ser un número entero.")
+        if not isinstance(isbn, int):
+            raise ValueError("El ISBN debe ser un número entero.")
+
         self.titulo = titulo
         self.autor = autor
         self.genero = genero
@@ -85,6 +96,8 @@ class Libro:
         Returns:
         Libro: Un objeto Libro creado a partir del diccionario.
         """
+        if not isinstance(dicc, dict):
+            raise ValueError("El diccionario debe ser un objeto de tipo dict.")
         return cls(
             dicc["titulo"],
             dicc["autor"],
