@@ -16,6 +16,7 @@ libros_bp = Blueprint('libros', __name__)
 repositorio = RepositorioLibros()
 
 ''' ENDPOINTS '''
+
 # a) consultar todos los libros registrados (GET)
 @libros_bp.route('/libros', methods=['GET'])
 def obtenerTodos():
