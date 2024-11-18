@@ -80,11 +80,11 @@ def modificarLibro(isbn):
     except ValueError as e:
         return jsonify({'mensaje': str(e)}), 400
 
-# e) eliminar un libro del sistema dado su ISBN (DELETE)
+#e) eliminar un libro del sistema dado su ISBN (DELETE)
 @libros_bp.route('/libros/<int:isbn>', methods=['DELETE'])
 def eliminarLibro(isbn):
     try:
-        # Verificar si el libro con el ISBN existe
+        #Verificar si el libro con el ISBN existe
         libro = None
         for l in repositorio.obtenerTodos():
             if l.getISBN() == isbn:
@@ -94,7 +94,7 @@ def eliminarLibro(isbn):
         if libro is None:
             return jsonify({'mensaje': 'Libro no encontrado'}), 404
         
-        # Si el libro existe, eliminarlo
+        #Si el libro existe, eliminarlo
         repositorio.eliminarPorISBN(isbn)
         return jsonify({'mensaje': 'Libro eliminado'}), 200
     
