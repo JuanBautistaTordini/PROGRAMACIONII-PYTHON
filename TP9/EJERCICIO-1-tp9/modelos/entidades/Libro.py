@@ -99,8 +99,9 @@ class Libro:
     def esIgual(self, otro):
         return self.isbn == otro.isbn
 
-    def toString(self):
-        return f'{self.titulo} de {self.autor}'
+    #toString
+    def __str__(self):
+        return f"ISBN: {self.isbn}, Titulo: {self.titulo}, Autor: {self.autor}, Genero: {self.genero}, Año de publicacion: {self.anio_publicacion}, Cantidad de ejemplares: {self.cantidad_ejemplares}"
 
     def toDiccionario(self):
         return {
