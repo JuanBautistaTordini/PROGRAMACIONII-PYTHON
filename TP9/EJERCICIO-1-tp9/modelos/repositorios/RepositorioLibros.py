@@ -31,7 +31,7 @@ class RepositorioLibros:
     
     def cargarTodos(self):
         try:
-            with open('C:\Users\bauti\OneDrive\Escritorio\TUP\Programacion II\tps\TP9\EJERCICIO-1-tp9\datos\libros.json', 'r', encoding=utf8) as archivo:
+            with open('C:/Users/bauti/OneDrive/Escritorio/TUP/Programacion II/tps/TP9/EJERCICIO-1-tp9/datos/libros.json', 'r', encoding='utf-8') as archivo:
                 libros = json.load(archivo)
                 for libro in libros:
                     self.libros.append(Libro.fromDiccionario(libro))
@@ -39,7 +39,7 @@ class RepositorioLibros:
             pass
     
     def guardarTodos(self):
-        with open('C:\Users\bauti\OneDrive\Escritorio\TUP\Programacion II\tps\TP9\EJERCICIO-1-tp9\datos\libros.json', 'w') as archivo:
+        with open('C:/Users/bauti/OneDrive/Escritorio/TUP/Programacion II/tps/TP9/EJERCICIO-1-tp9/datos/libros.json', 'w') as archivo:
             libros = [libro.toDiccionario() for libro in self.libros]
             json.dump(libros, archivo)
     
