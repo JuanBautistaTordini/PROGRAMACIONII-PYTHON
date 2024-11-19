@@ -27,7 +27,7 @@ class RepoSocios:
     
     def cargarTodos(self):
         try:
-            with open('socios.json', 'r', encoding = 'utf-8') as archivo:
+            with open('./datos/socios.json', 'r', encoding = 'utf-8') as archivo:
                 socios = json.load(archivo)
                 for socio in socios:
                     self.socios.append(Socio.fromDiccionario(socio))
@@ -36,7 +36,7 @@ class RepoSocios:
         
     def guardarTodos(self):
         try: 
-            with open('socios.json', 'w', encoding = 'utf-8') as archivo:
+            with open('./datos/socios.json', 'w', encoding = 'utf-8') as archivo:
                 socios = []
                 for socio in self.socios:
                     socios.append(socio.toDiccionario())

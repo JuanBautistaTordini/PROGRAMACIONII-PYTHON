@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "4c4049c6-7723-4d76-914a-56fa24132a56",
+		"name": "EJERCICIO-2-tp9",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39820955"
+	},
+	"item": [
+		{
+			"name": "a) ver-registrados-GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/socios",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"socios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b) buscar-dni-GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/socios/123456",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"socios",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "c) agregar-socio-POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dni\": 87654321,\r\n    \"nombre\": \"María\",\r\n    \"apellido\": \"Gómez\",\r\n    \"mail\": \"mariagomez@gmail.com\",\r\n    \"fecha_nacimiento\": \"1995-05-10\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/socios",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"socios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "d) modificar-por-dni-PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Juan Carlos\",\r\n    \"apellido\": \"Pérez\",\r\n    \"mail\": \"juancarlos@gmail.com\",\r\n    \"fecha_nacimiento\": \"1990-01-01\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/socios/87654321",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"socios",
+						"87654321"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "e) eliminar-por-dni-DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/socios/87654321",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"socios",
+						"87654321"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
