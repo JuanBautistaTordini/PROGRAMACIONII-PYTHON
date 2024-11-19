@@ -8,7 +8,7 @@
 | - cargarTodos()        |
 | - guardarTodos()       |
 | + obtenerTodos(): list<Libro> |
-| + existe(libto:Libro): bool |
+| + existe(libro:Libro): bool |
 | + existeISBN(isbn:int): bool |
 | + agregar(nuevoLibro:Libro) |
 | + modificarPorISBN(isbn:int, titulo: str, autor: str, genero: str, anio_publicacion: int)|
@@ -37,14 +37,17 @@ class RepositorioLibros:
                 for libro in libros:
                     self.libros.append(Libro.fromDiccionario(libro))
         except FileNotFoundError:
-            return []
+            pass
             
     
     def guardarTodos(self):
-        with open('./libros.json', 'w') as archivo:
-            libros = [libro.toDiccionario() for libro in self.libros]
-            json.dump(libros, archivo)
-    
+        try:
+            with open('./libros.json', 'w') as archivo:
+                libros = [libro.toDiccionario() for libro in self.libros]
+                json.dump(libros, archivo)
+        except FileNotFoundError:
+            return False
+        
     def obtenerTodos(self):
         return self.libros
     
@@ -52,7 +55,10 @@ class RepositorioLibros:
         return libro in self.libros
     
     def existeISBN(self, isbn:int):
-        return any(libro.isbn == isbn for libro in self.libros)
+        for libro in self.libros:
+            if libro.isbn == isbn:
+                return True
+        return False
     
     def agregar(self, nuevoLibro:Libro):
         if not self.existe(nuevoLibro):
