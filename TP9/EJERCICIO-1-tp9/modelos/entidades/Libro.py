@@ -24,8 +24,8 @@
 class Libro:
     #Constructor
     def __init__(self, isbn:int, titulo:str, autor:str, genero:str, anio_publicacion:int):
-        #validaciones
         
+        #validaciones
         if not isinstance(isbn, int):
             raise ValueError("El ISBN debe ser un numero entero")
         if not isinstance(titulo, str):
@@ -38,7 +38,6 @@ class Libro:
             raise ValueError("El año de publicacion debe ser un numero entero")
         
         #atributos de instancia
-        
         self.isbn = isbn
         self.titulo = titulo
         self.autor = autor
@@ -111,5 +110,3 @@ class Libro:
             'genero': self.genero,
             'anio_publicacion': self.anio_publicacion
         }
-    
-    
