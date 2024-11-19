@@ -11,6 +11,11 @@ from modelos.repositorios.RepositorioLibros import RepositorioLibros
 
 #objeto de tipo Blueprint
 libros_bp = Blueprint('libros', __name__)
+# Esta línea define un Blueprint en Flask llamado "libros".
+# - 'libros': Es el nombre del Blueprint, que se utiliza internamente y como prefijo en las rutas de este Blueprint.
+# - __name__: Es el nombre del módulo actual (el archivo donde está definido este Blueprint), 
+# necesario para que Flask pueda ubicar correctamente los recursos relacionados (como plantillas o archivos estáticos).
+
 
 #repositorio de libros
 repositorio = RepositorioLibros()
