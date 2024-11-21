@@ -45,25 +45,24 @@ OBSERVACIONES:
 - establecerUltimoId(id: int) se utiliza cuando inicia el sistema y establece el ultimo id utilizando o 0 si no se encuentra el archivo de datos.
 '''
 
-from datetime import datetime
 
 class Prestamo:
     # atributos de clase
     ultimoId = 0
     
     # atributos de instancia
-    def __init__(self, socio_dni: int, libro_isbn: int, fecha_retiro: datetime, cant_dias: int, fecha_devolucion: datetime):
+    def __init__(self, socio_dni: int, libro_isbn: int, fecha_retiro: str, cant_dias: int, fecha_devolucion: str):
         # validaciones:
         if not isinstance(socio_dni, int):
             raise ValueError("El dni del socio debe ser un entero.")
         if not isinstance(libro_isbn, int):
             raise ValueError("El ISBN del libro debe ser un entero.")
-        if not isinstance(fecha_retiro, datetime):
-            raise ValueError("La fecha de retiro debe ser un objeto datetime.")
+        if not isinstance(fecha_retiro, str):
+            raise ValueError("La fecha de retiro debe ser un objeto str.")
         if not isinstance(cant_dias, int):
             raise ValueError("La cantidad de dias debe ser un entero.")
-        if not isinstance(fecha_devolucion, datetime):
-            raise ValueError("La fecha de devolucion debe ser un objeto datetime.")
+        if not isinstance(fecha_devolucion, str):
+            raise ValueError("La fecha de devolucion debe ser un objeto str.")
         
         # asignaciones
         self.id = Prestamo.obtenerNuevoId()
@@ -71,7 +70,7 @@ class Prestamo:
         self.libro_isbn = libro_isbn
         self.fecha_retiro = fecha_retiro
         self.cant_dias = cant_dias
-        self.fecha_devolucion = None
+        self.fecha_devolucion = fecha_devolucion
         
     #metodos de clase
     @classmethod
@@ -85,13 +84,12 @@ class Prestamo:
         
     @classmethod
     def fromDiccionario(cls, dic: dict) -> 'Prestamo':
-        prestamo = Prestamo(
+        return cls(
             dic['socio_dni'],
             dic['libro_isbn'],
             dic['fecha_retiro'],
             dic['cant_dias'],
             dic['fecha_devolucion']
-            dic['id']
         )
     
     #metodos de instancia
@@ -101,13 +99,13 @@ class Prestamo:
     def establecerLibroISBN(self, isbn: int):
         self.libro_isbn = isbn
     
-    def establecerFechaRetiro(self, fecha: datetime):
+    def establecerFechaRetiro(self, fecha: str):
         self.fecha_retiro = fecha
     
     def establecerCantDias(self, cant: int):
         self.cant_dias = cant
     
-    def establecerFechaDevolucion(self, fecha: datetime):
+    def establecerFechaDevolucion(self, fecha: str):
         self.fecha_devolucion = fecha
     
     def obtenerSocioDNI(self) -> int:
@@ -116,13 +114,13 @@ class Prestamo:
     def obtenerISBN(self) -> int:
         return self.libro_isbn
     
-    def obtenerFechaRetiro(self) -> datetime:
+    def obtenerFechaRetiro(self) -> str:
         return self.fecha_retiro
     
     def obtenerCantDias(self) -> int:
         return self.cant_dias
     
-    def obtenerFechaDevolucion(self) -> datetime:
+    def obtenerFechaDevolucion(self) -> str:
         return self.fecha_devolucion
     
     def esIgual(self, otro: 'Prestamo') -> bool:

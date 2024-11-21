@@ -69,7 +69,7 @@ class RepositorioPrestamo:
             else:
                 raise ValueError("El prestamo ya existe.")
         except FileNotFoundError:
-            return raise ValueError("Error al guardar los datos.")
+            raise ValueError("Error al guardar los datos.")
         
     '''
     def existe(socio_dni: int, libro_isbn: int, fecha_retiro: date) 
@@ -83,7 +83,7 @@ class RepositorioPrestamo:
                     return True
             return False
         except FileNotFoundError:
-            return raise ValueError("Error al comprobar la existencia del prestamo.")
+            raise ValueError("Error al comprobar la existencia del prestamo.")
         
     '''
     -obtenerPrestamo(socio_dni: int, libro_isbn: int, fecha_retiro: date) -> Prestamo 
@@ -98,7 +98,7 @@ class RepositorioPrestamo:
                     return prestamo
             return None
         except FileNotFoundError:
-            return raise ValueError("Error al obtener el prestamo.")
+            raise ValueError("Error al obtener el prestamo.")
     
     def modificarPorID(self, id: int, socio_dni: int, libro_isbn: int, fecha_retiro: datetime, cant_dias: int, fecha_devolucion: datetime):
         try:
@@ -113,7 +113,7 @@ class RepositorioPrestamo:
                     return
             raise ValueError("El prestamo no existe.")
         except FileNotFoundError:
-            return raise ValueError("Error al modificar el prestamo.")
+            raise ValueError("Error al modificar el prestamo.")
     
     def eliminarPorID(self, id: int):
         try:
@@ -124,7 +124,7 @@ class RepositorioPrestamo:
                     return
             raise ValueError("El prestamo no existe.")
         except FileNotFoundError:
-            return raise ValueError("Error al eliminar el prestamo.")
+            raise ValueError("Error al eliminar el prestamo.")
     
     '''
     - cantidadLibrosSinDevolver(isbn: int) -> int retorna la cantidad de 
@@ -140,6 +140,6 @@ class RepositorioPrestamo:
                     cantidad += 1
             return cantidad
         except FileNotFoundError:
-            return raise ValueError("Error al obtener la cantidad de libros sin devolver.")
+            raise ValueError("Error al obtener la cantidad de libros sin devolver.")
 
     
