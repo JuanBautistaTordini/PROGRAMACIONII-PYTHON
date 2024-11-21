@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "4592ebf9-6481-463e-96be-cc3a326899b7",
+		"name": "EJERCICIO-3-tp9",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39820955"
+	},
+	"item": [
+		{
+			"name": "a) obtener-prestamos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/prestamos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"prestamos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b) cargar-prestamos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"socio_dni\": 12345678,\r\n  \"libro_isbn\": 987654321,\r\n  \"cant_dias\": 2,\r\n  \"fecha_retiro\": \"2023-11-16\",\r\n  \"fecha_devolucion\": \"2023-11-23\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/prestamos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"prestamos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "c) eliminar-prestamo-por-id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/prestamos/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"prestamos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
