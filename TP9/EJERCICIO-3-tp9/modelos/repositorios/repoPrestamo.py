@@ -28,6 +28,8 @@ OBSERVACIONES:
 '''
 
 from modelos.entidades.classPrestamo import Prestamo
+import json
+from datetime import datetime
 
 class RepositorioPrestamo:
     def __init__(self):
